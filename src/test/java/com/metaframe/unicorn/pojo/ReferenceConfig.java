@@ -19,7 +19,7 @@ package com.metaframe.unicorn.pojo;
 import java.util.List;
 
 /**
- * @author Jerry Lee(oldratlee<at>gmail<dot>com)
+ * @author Jerry Lee(oldratlee AT gmail DOT com)
  */
 public class ReferenceConfig {
 

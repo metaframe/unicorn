@@ -17,7 +17,7 @@
 package com.metaframe.unicorn.pojo;
 
 /**
- * @author Jerry Lee(oldratlee<at>gmail<dot>com)
+ * @author Jerry Lee(oldratlee AT gmail DOT com)
  */
 public class ApplicationConfig {
 }
