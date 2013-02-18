@@ -16,13 +16,51 @@
 
 package com.metaframe.unicorn;
 
+import com.metaframe.unicorn.support.AbstractConfigSource;
+
 import java.util.List;
 
 /**
  * @author Jerry Lee(oldratlee AT gmail DOT com)
  */
 public class Unicorn {
-    public static ConfigSource merge(List<ConfigSource> sources) {
-        return null;
+
+    /**
+     * 把多个{@link ConfigSource}合并成一个。
+     *
+     * @param sources 被合并的多个
+     * @return
+     */
+    public static ConfigSource merge(final List<ConfigSource> sources) {
+        if (sources == null) {
+            throw new IllegalArgumentException("argument sources == null");
+        }
+        if (sources.isEmpty()) {
+            return AbstractConfigSource.EMPTY_SOURCE;
+        }
+        if (sources.size() == 1) {
+            return sources.get(0);
+        }
+
+        return new AbstractConfigSource() {
+            @Override
+            public boolean contains(String key) {
+                for (ConfigSource source : sources) {
+                    if (source.contains(key)) return true;
+                }
+                return false;
+            }
+
+            @Override
+            public String get(String key) {
+                for (ConfigSource source : sources) {
+                    if (source.contains(key)) return source.get(key);
+                }
+                return null;
+            }
+        };
+    }
+
+    private Unicorn() {
     }
 }

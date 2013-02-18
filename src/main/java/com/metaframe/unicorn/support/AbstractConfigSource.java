@@ -22,6 +22,18 @@ import com.metaframe.unicorn.ConfigSource;
  * @author Jerry Lee(oldratlee AT gmail DOT com)
  */
 public abstract class AbstractConfigSource implements ConfigSource {
+    public static final ConfigSource EMPTY_SOURCE = new AbstractConfigSource() {
+        @Override
+        public boolean contains(String key) {
+            return false;
+        }
+
+        @Override
+        public String get(String key) {
+            return null;
+        }
+    };
+
     /**
      * @since 0.1.0
      */

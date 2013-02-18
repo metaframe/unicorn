@@ -16,7 +16,6 @@
 
 package com.metaframe.unicorn.support;
 
-import com.metaframe.unicorn.ConfigSource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

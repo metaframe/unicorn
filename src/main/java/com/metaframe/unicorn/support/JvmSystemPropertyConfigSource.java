@@ -16,8 +16,6 @@
 
 package com.metaframe.unicorn.support;
 
-import com.metaframe.unicorn.ConfigSource;
-
 /**
  * JVM系统属性配置数据来源。
  * <p/>
