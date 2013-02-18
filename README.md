@@ -1,9 +1,18 @@
-unicorn
-=======
+Unicorn is a uniform configration lib for framework.  
+# The Name Unicorn is from the head letters of UNIform CONfigration.
 
-Unicorn is a uniform configration lib.
+Configration is a important aspect of a framework. Unlike common applications, a framework has for more demands of configration flexibility and uniformity.
 
-Configration is a important aspect of a framework. for a framework, flexibility and uniform of Configration is key point.
+- Multisource Integration.
+	- configration pojo
+	- spring configration
+	- classpath properties file
+	- JVM -D option
+	- remote config(ZooKeeper, etc)
+- Configration overwrite among source levels.
 
-- Multisource Integration: pojo, spring config, classpath properties file, JVM -D option, remote config(ZooKeeper, etc)
-- Configration overwrite for each level
+Unicorn Home Page:  
+<https://github.com/metaframe/unicorn/wiki>
+
+Unicorn Project Page:  
+<https://github.com/metaframe/unicorn>
