@@ -16,34 +16,13 @@
 
 package com.metaframe.unicorn;
 
+import java.util.List;
+
 /**
- * 配置数据来源。
- * <p/>
- * 比如：
- * <ul>
- * <li>JVM -D选项
- * <li>classpath的properties文件
- * <li>remote source(ZooKeeper etc.)
- * </ul>
- *
  * @author Jerry Lee(oldratlee AT gmail DOT com)
  */
-public interface ConfigSource {
-    boolean contains(String key);
-
-    String get(String key);
-
-    String get(String key, String defaultValue);
-
-    boolean getBoolean(String key);
-
-    boolean getBoolean(String key, boolean defaultValue);
-
-    int getInt(String key);
-
-    int getInt(String key, int defaultValue);
-
-    long getLong(String key);
-
-    long getLong(String key, long defaultValue);
+public class Unicorn {
+    public static ConfigSource merge(List<ConfigSource> sources) {
+        return null;
+    }
 }

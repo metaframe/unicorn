@@ -14,36 +14,25 @@
  * limitations under the License.
  */
 
-package com.metaframe.unicorn;
+package com.metaframe.unicorn.support;
+
+import com.metaframe.unicorn.ConfigSource;
 
 /**
- * 配置数据来源。
+ * JVM系统属性配置数据来源。
  * <p/>
- * 比如：
- * <ul>
- * <li>JVM -D选项
- * <li>classpath的properties文件
- * <li>remote source(ZooKeeper etc.)
- * </ul>
+ * JVM系统属性，即启动JVM的-D选项。
  *
  * @author Jerry Lee(oldratlee AT gmail DOT com)
+ * @see System#getProperties()
  */
-public interface ConfigSource {
-    boolean contains(String key);
+public class JvmSystemPropertyConfigSource extends AbstractConfigSource {
+    @Override
+    public boolean contains(String key) {
+        return System.getProperties().contains(key);
+    }
 
-    String get(String key);
-
-    String get(String key, String defaultValue);
-
-    boolean getBoolean(String key);
-
-    boolean getBoolean(String key, boolean defaultValue);
-
-    int getInt(String key);
-
-    int getInt(String key, int defaultValue);
-
-    long getLong(String key);
-
-    long getLong(String key, long defaultValue);
+    public String get(String key) {
+        return System.getProperty(key);
+    }
 }
